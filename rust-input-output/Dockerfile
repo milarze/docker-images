@@ -10,7 +10,7 @@ RUN cargo build --release --target x86_64-unknown-linux-musl
 
 FROM alpine:latest
 
-COPY --from=build /app/target/x86_64-unknown-linux-musl/release/rust-input-output /bin/rust-echo
+COPY --from=build /app/target/x86_64-unknown-linux-musl/release/rust-input-output /bin/rust-input-output
 
 ENTRYPOINT ["/bin/rust-input-output"]
 
